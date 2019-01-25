@@ -7,7 +7,7 @@ from sqlite_db import process_dummy_operation
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_TRACE_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SECRET_KEY'] = 'super_secret'
 api = Api(app)

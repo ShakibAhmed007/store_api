@@ -1,10 +1,5 @@
 from models.user import user
 
-User_List = [user(id=1,name='shakib',password = '12345'),
-             user(id=2,name='shojon',password = '12345'),
-             user(id=3,name='zahid',password = '12345')]
-
-
 def verify(username , password):
     if not (username and password):
         return False

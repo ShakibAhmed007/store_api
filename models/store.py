@@ -11,21 +11,17 @@ class store(db.Model):
 
 
 
-    def __init__(self,id,store_name,store_location):
-        self.id = id
+    def __init__(self,store_name,store_location):
         self.store_name = store_name
         self.store_location = store_location
 
     @classmethod
     def get_all_store(cls):
       Store_list = []
-      # all_store =  db.session.query(cls).all()
-      # for st in all_store:
-      #  store_info = {'id':st.id,'name:':st.store_name,'location':st.store_location}
-      #  Store_list.append(store_info)
-
-      Store_list.append({'Status':'Successfull'})
-
+      all_store =  db.session.query(cls).all()
+      for st in all_store:
+       store_info = {'id':st.id,'name:':st.store_name,'location':st.store_location}
+       Store_list.append(store_info)
 
       return Store_list
 
@@ -33,8 +29,8 @@ class store(db.Model):
 
 
     @classmethod
-    def insert_store_info(cls,id,store_name,store_location):
-        Store1 = cls(id, store_name, store_location)
+    def insert_store_info(cls,store_name,store_location):
+        Store1 = cls(store_name, store_location)
 
         db.session.add(Store1)
         db.session.commit()

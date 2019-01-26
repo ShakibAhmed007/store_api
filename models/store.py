@@ -19,10 +19,13 @@ class store(db.Model):
     @classmethod
     def get_all_store(cls):
       Store_list = []
-      all_store =  db.session.query(cls).all()
-      for st in all_store:
-       store_info = {'id':st.id,'name:':st.store_name,'location':st.store_location}
-       Store_list.append(store_info)
+      # all_store =  db.session.query(cls).all()
+      # for st in all_store:
+      #  store_info = {'id':st.id,'name:':st.store_name,'location':st.store_location}
+      #  Store_list.append(store_info)
+
+      Store_list.append({'Status':'Successfull'})
+
 
       return Store_list
 
